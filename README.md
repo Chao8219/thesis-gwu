@@ -163,6 +163,8 @@ You can add more packages but be aware that all package interactions **HAVE NOT*
 
 There is also some demonstration of typical commands, such as equations, figures, cross-referencing. 
 
+**Special note**: using `latexmk`, based on your OS, you may need to modify the `.latexmkrc` so that the build will be accomplished. 
+
 ## Additional Tips
 
 You can find some additional tips in [`./doc/tips.md`](./doc/tips.md)

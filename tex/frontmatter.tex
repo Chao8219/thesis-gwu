@@ -75,14 +75,14 @@ Include a fancy quote or dedication
 }
 
 \prologue{
-    This is the prologe. 
+    This is the prologue. 
     It's another front matter page that offers additional detail into your work.
     Typically, only one (preface OR prologue OR foreword) is used. 
     You can remove the other sections by deleting them inside \texttt{tex/frontmatter.tex} or using the appropriate show or hide commands.
 }
 
 \foreword[2]{
-    This is the forword. 
+    This is the foreword. 
     It's another front matter page that offers additional detail into your work.
     Typically, only one (preface OR prologue OR foreword) is used. 
     You can remove the other sections by deleting them inside \texttt{tex/frontmatter.tex} or using the appropriate show or hide commands.
@@ -144,11 +144,15 @@ Include a fancy quote or dedication
 \newabbreviation{crtbp}{CRTBP}{Circular Restricted Three Body Problem}
 \newabbreviation{lidar}{LIDAR}{Light Detection and Ranging}
 % defining abbreviations like this allows for autocompletion
+% note: corresponding fields should be filled first, e.g., if using `\acrfull{filo}`, `short` and `long` are needed.
+% note ref: https://tex.stackexchange.com/questions/509857/glossaries-package-customization-of-entries-acrshort-not-working
 \newglossaryentry{filo}{
     name={FILO},
     type=\glsxtrabbrvtype,
     description={first in last out},
-    first={first in last out (FILO)}
+    first={first in last out (FILO)}, 
+    short={FILO}, 
+    long={First In Last Out}
 }
 
 % glossary entries

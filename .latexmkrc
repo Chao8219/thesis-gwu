@@ -1,12 +1,15 @@
 add_cus_dep('glo', 'gls', 0, 'run_makeglossaries');
 add_cus_dep('acn', 'acr', 0, 'run_makeglossaries');
 
+# ref: https://tex.stackexchange.com/questions/1226/how-to-make-latexmk-use-makeglossaries
 sub run_makeglossaries {
   if ( $silent ) {
-    system "makeglossaries -q '$_[0]'";
+    # system "makeglossaries -q '$_[0]'"; # for unix
+    system "makeglossaries", "-q", "$_[0]"; # for windows
   }
   else {
-    system "makeglossaries '$_[0]'";
+    # system "makeglossaries '$_[0]'"; # for unix
+    system "makeglossaries", "$_[0]"; # for windows
   };
 }
 
