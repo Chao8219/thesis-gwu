@@ -303,6 +303,33 @@ The key thing to note from~\cref{fig:ext} is that trustworthiness reaches a maxi
     \label{fig:xkcd} 
 \end{figure}
 
+But if you use \verb+\cref+ in captains, it may show ?? in the list of figures, e.g., showing \verb+?? 1.4a+ instead of \verb+Figure 1.4a+.
+\cref{fig:different_pandas} is an example.
+One alternative is to use \verb+Figure \ref+ directly.
+The reason behind this is still under investigation.
+If you have any thoughts, issues and PRs are welcome! 
+
+\begin{figure}[h] 
+	\centering 
+	\begin{subfigure}[htbp]{0.48\textwidth} 
+		\includegraphics[width=\textwidth]{figures/panda-pixabay.jpg} 
+		\caption{Panda} 
+		\label{fig:panda} 
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[htbp]{0.48\textwidth} 
+		\includegraphics[width=\textwidth]{figures/little-panda-pixabay.jpg} 
+		\caption{Little Panda} 
+		\label{fig:little-panda} 
+	\end{subfigure}
+	\caption{
+		\cref{fig:panda} is a panda, and Figure \ref{fig:little-panda} is a little panda.
+		They are not quite the same! 
+		Also this style is not quite the same with \cref{fig:xkcd}.
+	}
+	\label{fig:different_pandas} 
+\end{figure}
+
 \subsection{References}
 
 Lots of famous people tend to write famous papers~\cite{newton1999}. 
