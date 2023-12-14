@@ -51,13 +51,14 @@
 %%  2016.09.24 @Shankar Kulumani  : First attempt to modify for GWU
 %%  2018.01.20 @Shankar Kulumani  : Setup titlesec for modifying headings
 %%  2022.07.01 @Kanishke Gamagedara  : Update for 2022 GWU style guidelines
+%%  2023.12.13 @Zichao Hou        : Add new fields for other types of degrees
 
 %% ---- HEADERS --------------------------------------------------------
 % This prevents the compiler from running on old versions of LaTeX.
 \NeedsTeXFormat{LaTeX2e}
 
 % This command gives the name of the class.
-\ProvidesClass{thesis-gwu}[2022/07/01 v1.6.2 GWU Thesis template]
+\ProvidesClass{thesis-gwu}[2023/12/13 v1.6.3 GWU Thesis template]
 
 %% ---- OPTIONS PROCESSING ---------------------------------------------
 % Define three switches for the the thesis format types.
@@ -92,7 +93,7 @@
 \newif\if@gwu@nomenclature
 \newif\if@gwu@abstract
 
-\newif\if@gwu@msdegree
+\newif\if@gwu@masdegree % postgraduate degreee
 
 \newif\if@gwu@titlepage
 
@@ -102,7 +103,7 @@
 % \@gwu@listoftablestrue
 % \@gwu@copyrighttrue
 % \@gwu@committeepagefalse
-\@gwu@msdegreetrue
+\@gwu@masdegreetrue
 
 
 % When there are two co-directors
@@ -352,13 +353,15 @@
 \renewcommand{\@title}{Insert a Title!}
 \renewcommand{\@author}{Insert an Author!}
 
-\newcommand{\@bsdepartment}{Insert a BS department name!}
-\newcommand{\@bsschool}{Insert BS school!}
-\newcommand{\@bsgrad}{BS Grad date!}
+\newcommand{\@bachtype}{Insert a Bachelor type, e.g., B.S. or B.Eng.}
+\newcommand{\@bachdepartment}{Insert a Bachelor department name!}
+\newcommand{\@bachschool}{Insert Bachelor school!}
+\newcommand{\@bachgrad}{Bachelor Grad date!}
 
-\newcommand{\@msdepartment}{Insert a MS department name!}
-\newcommand{\@msschool}{Insert MS school!}
-\newcommand{\@msgrad}{MS Grad date!}
+\newcommand{\@mastype}{Insert a Master type, e.g., M.S. or M.A.}
+\newcommand{\@masdepartment}{Insert a Master department name!}
+\newcommand{\@masschool}{Insert Master school!}
+\newcommand{\@masgrad}{Master Grad date!}
 
 \newcommand{\@degree}{Doctor of Philosophy}
 \newcommand{\@department}{Insert a Department Name!}
@@ -374,18 +377,21 @@
 \renewcommand{\title}[1]{\renewcommand{\@title}{#1}\@gwu@titlepagetrue}
 \renewcommand{\author}[1]{\renewcommand{\@author}{#1}}
 
-\newcommand{\bsdepartment}[1]{\renewcommand{\@bsdepartment}{#1}}
-\newcommand{\bsschool}[1]{\renewcommand{\@bsschool}{#1}}
-\newcommand{\bsgrad}[1]{\renewcommand{\@bsgrad}{#1}}
+\newcommand{\bachtype}[1]{\renewcommand{\@bachtype}{#1}} % bachelor type
+\newcommand{\bachdepartment}[1]{\renewcommand{\@bachdepartment}{#1}}
+\newcommand{\bachschool}[1]{\renewcommand{\@bachschool}{#1}}
+\newcommand{\bachgrad}[1]{\renewcommand{\@bachgrad}{#1}}
 
-\newcommand{\showmsdegree}{\@gwu@msdegreetrue}
-\newcommand{\hidemsdegree}{\@gwu@msdegreefalse}
+\newcommand{\mastype}[1]{\renewcommand{\@mastype}{#1}} % master type
+
+\newcommand{\showmasdegree}{\@gwu@masdegreetrue}
+\newcommand{\hidemasdegree}{\@gwu@masdegreefalse}
 
 \newcommand{\hascochair}{\@gwu@cochairtrue}
 
-\newcommand{\msdepartment}[1]{\renewcommand{\@msdepartment}{#1}}
-\newcommand{\msschool}[1]{\renewcommand{\@msschool}{#1}}
-\newcommand{\msgrad}[1]{\renewcommand{\@msgrad}{#1}}
+\newcommand{\masdepartment}[1]{\renewcommand{\@masdepartment}{#1}}
+\newcommand{\masschool}[1]{\renewcommand{\@masschool}{#1}}
+\newcommand{\masgrad}[1]{\renewcommand{\@masgrad}{#1}}
 
 \newcommand{\degree}[1]{\renewcommand{\@degree}{#1}}
 \newcommand{\department}[1]{\renewcommand{\@department}{#1}}
@@ -400,13 +406,15 @@
 \newcommand{\inserttitle}{\@title}
 \newcommand{\insertauthor}{\@author}
 
-\newcommand{\insertbsdepartment}{\@bsdepartment}
-\newcommand{\insertbsschool}{\@bsschool}
-\newcommand{\insertbsgrad}{\@bsgrad}
+\newcommand{\insertbachtype}{\@bachtype} % bachelor type
+\newcommand{\insertbachdepartment}{\@bachdepartment}
+\newcommand{\insertbachschool}{\@bachschool}
+\newcommand{\insertbachgrad}{\@bachgrad}
 
-\newcommand{\insertmsdepartment}{\@msdepartment}
-\newcommand{\insertmsschool}{\@msschool}
-\newcommand{\insertmsgrad}{\@msgrad}
+\newcommand{\insertmastype}{\@mastype} % master type
+\newcommand{\insertmasdepartment}{\@masdepartment}
+\newcommand{\insertmasschool}{\@masschool}
+\newcommand{\insertmasgrad}{\@masgrad}
 
 \newcommand{\insertdegree}{\@degree}
 \newcommand{\insertdepartment}{\@department}
@@ -442,11 +450,11 @@
    % More rubber space
    %\vfill %
    % previous degrees
-   \if@gwu@msdegree
-    B.S. in \insertbsdepartment, \insertbsgrad, \insertbsschool \\
-    M.S. in \insertmsdepartment, \insertmsgrad, \insertmsschool \\[2\baselineskip]
+   \if@gwu@masdegree
+    \insertbachtype~in \insertbachdepartment, \insertbachgrad, \insertbachschool \\
+    \insertmastype~in \insertmasdepartment, \insertmasgrad, \insertmasschool \\[2\baselineskip]
    \else
-    B.S. in \insertbsdepartment, \insertbsgrad, \insertbsschool \\[2\baselineskip]
+    \insertbachtype~in \insertbachdepartment, \insertbachgrad, \insertbachschool \\[2\baselineskip]
    \fi
    % Text from guidelines
    A Dissertation submitted to \\[3\baselineskip] %
