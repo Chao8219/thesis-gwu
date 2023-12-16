@@ -1,0 +1,74 @@
+% !TEX root = ../thesis-sample.tex
+
+% only for the first appendix
+%\appendix
+%\doublespacing
+
+\chapter{Long Table Example}
+\label{chap:appendix_long_table_exp}
+
+\section{Regular Table}
+\label{sec:appendix_long_table_exp:regular_table}
+
+This section provides a regular table in the appendix.
+
+\begin{table}[h]
+	\centering
+	\caption{Ancient Chinese Poets List}
+	\begin{tabular}{|p{2cm}|p{2cm}|p{1.8cm}|p{2.8cm}|p{1.8cm}|}
+		\toprule
+		Last Name & First Name & Courtesy Name (Zi) & Courtesy Name (Hao) & Dynasty \\
+		\midrule
+		Li & Qingzhao & & Yian Jushi & Song\\
+		Nalan & Xingde & Ruorong & Yinshui \\
+		Li & Bai & Taibai & Qinglian Jushi & Tang \\
+		Meng & Haoran & Haoran & Meng Shanren & Tang \\
+		Cao & Pi & Zihuan & & Cao Wei \\
+		Du & Fu & Zimei & Shaoling Yelao & Tang \\
+		Su & Shi & Zizhan & Dongpo Jushi & Song \\
+		Liu & Ji & Bowen & & Ming \\
+		Zheng & Xie & Kerou & Banqiao Daoren & Qing \\
+		\bottomrule
+	\end{tabular}
+\end{table}
+
+\section{Long Table}
+\label{sec:appendix_long_table_exp:long_table}
+
+This section provides a long table example.
+
+\begin{longtable}{|p{3.2cm}|p{5cm}|p{4.2cm}|}
+	\caption{The Metropolitan Museum Art Collection List \cite{metCollectionPage}} \\
+	\toprule
+	Art Category & Collection Name & Date \\
+	\midrule
+	\endfirsthead
+	\caption[]{(cont.)} \\
+	\toprule
+	Art Category & Collection Name & Date \\
+	\midrule
+	\endhead
+	\midrule
+	\endfoot
+	Egyptian Art & Coffin of the Lady Nefer & 4rd century B.C. or later \\
+	Egyptian Art & Worker Shabti of Nauny & ca. 1550-1479 B.C. \\
+	Egyptian Art & Penannular Earring & ca. 1550–1295 B.C. \\
+	Egyptian Art & Glazed disk in the shape of rosette & ca. 1279–1213 B.C. \\
+	Egyptian Art & Female sphinx amulet & ca. 1981–1550 B.C. \\
+	Egyptian Art & Inlay, hieroglyph & 664–610 B.C. \\
+	Egyptian Art & Block Statue of a Prophet of Montu and Scribe Djedkhonsuefankh, son of Khonsumes and Taat & 690–610 B.C. \\
+	Egyptian Art & Queen Nefertari Kneeling in Adoration, Tomb of Nefertari & ca. 1279–1213 B.C. \\
+	Egyptian Art & Heart Amulet & ca. 1070–945 B.C. \\
+	Egyptian Art & Fragmentary Ring Decorated with a Wedjat Eye & ca. 1390–1352 B.C. \\
+	European Paintings & Salome with the Head of John the Baptist & ca. 1876 \\
+	European Paintings & The Rape of Tamar & probably ca. 1640 \\
+	European Paintings & Dancer with a Fan & ca. 1880 \\
+	European Paintings & The Nation Is in Danger, or the Enrollment of Volunteers at the Place du Palais-Royal in July 1792 & 1832 \\
+	European Paintings & Basket of Fruit & ca. 1620 \\
+	European Paintings & Allegory of the Arts & 1742 \\
+	European Paintings & The Crucifixion & ca. 1400 \\
+	European Paintings & Desdemona (The Song of the Willow) & 1849 \\
+	European Paintings & Christ and the Twelve Apostles & ca. 1400 \\
+	European Paintings & Madonna and Child & ca. 1280 \\
+	European Paintings & Penelope & ca. 1868 \\
+\end{longtable}

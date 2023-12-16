@@ -12,6 +12,10 @@
 %\tikzexternalize % this command will throw error
 \tikzsetexternalprefix{cache/}
 
+% Tables
+\usepackage{booktabs, multirow, array}
+\usepackage{subcaption}
+
 %% DOCUMENT AREA
 \begin{document}
 
@@ -23,4 +27,6 @@
 
 % appendices must appear after
 \include{tex/appendix}
+\include{tex/appendix_long_table_example}
+
 \end{document}
